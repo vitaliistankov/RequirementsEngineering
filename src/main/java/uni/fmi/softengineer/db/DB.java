@@ -28,7 +28,7 @@ public String login(String username, String password) {
 		
 		boolean userExists= userDb.stream()
 				.anyMatch(user -> user.getUsername().equals(username) && user.getPassword().equals(password));
-		return userExists ? "You eneterd to the system" : "Invalid data";
+		return userExists ? "You have logged into the system" : "Invalid data";
 	}
 
 }

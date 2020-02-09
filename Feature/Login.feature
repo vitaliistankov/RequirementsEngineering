@@ -29,7 +29,13 @@ in order to login to the system.
     When Enters a valid username
     And Enters a valid password
     And Presses on the login button 
-    Then Shows a message "You enetered to the system"
+    Then Shows a message "You have logged into the system"
+    
+   
+    
+    
+    
+    
     
 
   

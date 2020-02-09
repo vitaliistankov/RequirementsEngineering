@@ -26,7 +26,7 @@ public class UserLoginTestSteps {
 
 	}
 
-	@Given("^Login popup opens$")
+	@Given("^Login pop up opens$")
 	public void Login_popup_opens() throws Throwable {
 		assertNotNull(loginForm);
 
