@@ -25,11 +25,11 @@ in order to login to the system.
   Scenario: Logging in with valid user data
     Given User is on gui
     And Presses the login button
-    And Login popup opens
+    And Login pop up opens
     When Enters a valid username
     And Enters a valid password
     And Presses on the login button 
-    Then I validate the outcomes
-    And check more outcomes
+    Then Shows a message "You enetered to the system"
+    
 
   
