@@ -19,7 +19,7 @@
 
 Feature: Login Feature
   Each user is required to use the login with a pre-registered account 
-in order to login to the system.
+	in order to login to the system.
 
   
   Scenario: Logging in with valid user data
@@ -30,6 +30,52 @@ in order to login to the system.
     And Enters a valid password
     And Presses on the login button 
     Then Shows a message "You have logged into the system"
+    
+    
+    Scenario: Logging in with invalid user data
+    Given User is on gui
+    And Presses the login button
+    And Login pop up opens
+    When Enters an invalid username
+    And Enters an invalid password
+    And Presses on the login button
+    Then Shows a message "Invalid data" 
+    
+    Scenario: Logging in with username only
+    Given User is on gui
+    And Presses the login button
+    And Login pop up opens
+    When Enters a valid username
+    And Presses on the login button
+    Then Shows a message "All requred fields should be filled" 
+    
+    Scenario: Logging in with password only
+    Given User is on gui
+    And Presses the login button
+    And Login pop up opens
+    When Enters a valid password
+    And Presses on the login button
+    Then Shows a message "All requred fields should be filled" 
+    
+    Scenario: Logging in without login/password
+    Given User is on gui
+    And Presses the login button
+    And Login pop up opens
+    And Presses on the login button
+    Then Shows a message "All requred fields should be filled" 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
    
     

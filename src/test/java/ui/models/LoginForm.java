@@ -25,7 +25,7 @@ public class LoginForm {
 			message= new DB().login(username,password);
 			
 		}else {
-			message= "Please fill up all obligatory fields";
+			message= "All requred fields should be filled";
 		}
 		
 	}
