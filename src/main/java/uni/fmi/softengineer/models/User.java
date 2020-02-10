@@ -1,57 +1,51 @@
 package uni.fmi.softengineer.models;
 
-
-import java.util.*;
-
-/**
- * 
- */
 public class User {
 
-    /**
-     * Default constructor
-     */
-    public User() {
-    }
+	private String username;
+	private String password;
+	private String certifcation;
+	private float marks;
 
-    /**
-     * 
-     */
-    private String username;
+	public String getUsername() {
+		return username;
+	}
 
-    /**
-     * 
-     */
-    private String password;
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    /**
-     * @param username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    /**
-     * @param username
-     * @return 
-     */
-    public String getUsername() {
-        return username;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    /**
-     * @param password
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getCertifcation() {
+		return certifcation;
+	}
 
-    /**
-     * @param password
-     * @return 
-     */
-    public String getPassword() {
-        return password;
-    }
+	public void setCertifcation(String certifcation) {
+		this.certifcation = certifcation;
+	}
 
+	public float getMarks() {
+		return marks;
+	}
+
+	public void setMarks(float marks) {
+		this.marks = marks;
+	}
+
+	public boolean getResult() {
+		if (this.marks < 60) {
+
+			return false;
+		} else {
+			return true;
+		}
+
+	}
 }
