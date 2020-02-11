@@ -13,14 +13,7 @@ public class Responce {
 	 */
 	private String username;
 
-	/**
-	 * 
-	 */
-	public Test category;
-
-	/**
-	 * @return
-	 */
+	
 	public String getName() {
 		// TODO implement here
 		return "";

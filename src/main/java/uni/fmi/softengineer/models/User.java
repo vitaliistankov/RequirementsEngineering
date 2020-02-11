@@ -4,8 +4,9 @@ public class User {
 
 	private String username;
 	private String password;
+	private int marks;
 	private String certifcation;
-	private float marks;
+	
 
 	public String getUsername() {
 		return username;
@@ -31,21 +32,14 @@ public class User {
 		this.certifcation = certifcation;
 	}
 
-	public float getMarks() {
+	public int getMarks() {
 		return marks;
 	}
 
-	public void setMarks(float marks) {
+	public void setMarks(int marks) {
 		this.marks = marks;
 	}
 
-	public boolean getResult() {
-		if (this.marks < 60) {
-
-			return false;
-		} else {
-			return true;
-		}
-
-	}
+	
+	
 }
