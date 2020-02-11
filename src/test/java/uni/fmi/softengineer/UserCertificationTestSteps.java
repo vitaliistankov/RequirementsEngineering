@@ -1,11 +1,7 @@
 package uni.fmi.softengineer;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -57,12 +53,13 @@ public class UserCertificationTestSteps {
 		certificationForm.setMarks(5);
 	}
 	
-	@Then("^Shows a message \"([^\"]*)\"$")
-	public void Shows_a_message(String expectedMessage) throws Throwable {
-		assertEquals(expectedMessage, certificationForm.getMessage());
-	    
-	}
-	
+	/*
+	 * @Then("^Shows a message \"([^\"]*)\"$") public void Shows_a_message(String
+	 * expectedMessage) throws Throwable { assertEquals(expectedMessage,
+	 * certificationForm.getMessage());
+	 * 
+	 * }
+	 */
 	
 
 	

@@ -18,25 +18,39 @@
 #Sample Feature Definition Template
 
 Feature: Certification Feature
-  Each user is requred to pass exam to get certified
+  Each user is can pass exam to get certified
 
   
-  Scenario: User is passed
+  Scenario: Passing exam within requred duration and marks 
     Given User is on ExamHomeScreen
     And Presses the start button
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+    And Timer is started
+    When Passes exam within requred duration
+    And Passes exam getting requred number of marks
+    
+    
+   
+    Scenario: Passing exam out of requred duration and marks 
+    Given User is on ExamHomeScreen
+    And Presses the start button
+    And Timer is started
+    When Not passes exam within requred duration
+    And Not passes exam within requred number of marks
+    
+    
+    
+    Scenario: Passing exam out of requred duration
+    Given User is on ExamHomeScreen
+    And Presses the start button
+    And Timer is started
+    When Not passes exam within requred duration
+    
+    
+    
+    Scenario: Passing exam out of requred number of marks
+    Given User is on ExamHomeScreen
+    And Presses the start button
+    And Timer is started
+    When Not passes exam within requred number of marks
+    
+ 
