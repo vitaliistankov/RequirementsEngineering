@@ -23,11 +23,13 @@ Feature: Certification Feature
   
   Scenario: Passing exam within requred duration and marks 
     Given User is on ExamHomeScreen
+    When Login with username
     And Presses the start button
     And Timer is started
     When Passes exam within requred duration
     And Passes exam getting requred number of marks
-    
+    Then Message shown "You have been certified"
+        
     
    
     Scenario: Passing exam out of requred duration and marks 
@@ -52,5 +54,6 @@ Feature: Certification Feature
     And Presses the start button
     And Timer is started
     When Not passes exam within requred number of marks
+    
     
  

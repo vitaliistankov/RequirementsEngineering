@@ -1,18 +1,20 @@
 package ui.models;
 
 import uni.fmi.softengineer.db.CUDB;
+import uni.fmi.softengineer.models.User;
 
 public class CertificationForm {
 
 	private String username;
-	private String certification;
 	private int marks;
 	private int duration;
 	private String message;
+	
+	//User user = new User();
 
 	public static final int DURATION = 45;
 	public static final int MIN_MARKS = 60;
-	public static final String CERTIFICATION = "Java";
+	
 
 	public void addUsername(String username) {
 		this.username = username;
@@ -20,26 +22,6 @@ public class CertificationForm {
 
 	public void addMarks(int marks) {
 		this.marks = marks;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getCertification() {
-		return certification;
-	}
-
-	public void setCertification(String certification) {
-		this.certification = certification;
-	}
-
-	public int getDuration() {
-		return duration;
 	}
 
 	public void setDuration(int duration) {
@@ -53,23 +35,26 @@ public class CertificationForm {
 	public void setMarks(int marks) {
 		this.marks = marks;
 	}
-
+	
+	
 	public boolean passExam() {
 
-		boolean isCertified = false;
+		boolean isPassed = false;
 
 		if (marks >= MIN_MARKS && duration <= DURATION) {
 			message = new CUDB().userCertified(username);
-			isCertified = true;
+			isPassed = true;
 
 		} else {
 
-			message = "Try again";
+			message = "You should meet the requirements to pass the exam!";
 
 		}
-		return isCertified;
+		return isPassed;
 
 	}
+	
+	
 
 	public Object getMessage() {
 		return message;

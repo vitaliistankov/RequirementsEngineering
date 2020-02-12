@@ -14,16 +14,17 @@ public class CUDB {
 			certifiedUserDb = new ArrayList<User>();
 			User user = new User();
 			user.setMarks(60);
-			user.setCertifcation("Java");
+			user.setDuration(45);
+			//user.setCertifcation("Java");
 			certifiedUserDb.add(user);
 
 		}
 
 		public String userCertified(String username) {
 
-			boolean userExists = certifiedUserDb.stream()
+			boolean userCertified = certifiedUserDb.stream()
 					.anyMatch(user -> user.getUsername().equals(username));
-			return userExists ? "You have certified" : "Try again";
+			return userCertified ? "You have been certified" : "You should pass the exam to get certified";
 		}
 
 }

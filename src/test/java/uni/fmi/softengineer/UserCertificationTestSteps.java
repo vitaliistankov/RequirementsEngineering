@@ -11,15 +11,22 @@ import uni.fmi.softengineer.models.User;
 
 public class UserCertificationTestSteps {
 
-	// private User user = new User();
+	//private User user = new User();
 	private ExamHomeScreen examHomeScreen;
 	private CertificationForm certificationForm;
-	private User user;
+	//private User user;
 
 	@Given("^User is on ExamHomeScreen$")
 	public void User_is_on_ExamHomeScreen() throws Throwable {
 		examHomeScreen = new ExamHomeScreen();
 	}
+	
+	/*
+	 * @When("^Login with username$") public void Login_with_username() throws
+	 * Throwable { certificationForm.addUsername("John");
+	 * 
+	 * }
+	 */
 
 	@Given("^Presses the start button$")
 	public void Presses_the_start_button() throws Throwable {
@@ -43,42 +50,29 @@ public class UserCertificationTestSteps {
 		certificationForm.setMarks(100);
 	}
 	
+	
+	@Then("^Message shown \"([^\"]*)\"$")
+	public void Message_shown(String expectedMessage) throws Throwable {
+		assertEquals(expectedMessage, certificationForm.getMessage());
+	    
+	}
+
 	@When("^Not passes exam within requred duration$")
 	public void Not_passes_exam_within_requred_duration() throws Throwable {
 		certificationForm.setDuration(100);
 	}
-	
+
 	@When("^Not passes exam within requred number of marks$")
 	public void Not_passes_exam_within_requred_number_of_marks() throws Throwable {
 		certificationForm.setMarks(5);
 	}
-	
+
 	/*
 	 * @Then("^Shows a message \"([^\"]*)\"$") public void Shows_a_message(String
 	 * expectedMessage) throws Throwable { assertEquals(expectedMessage,
 	 * certificationForm.getMessage());
 	 * 
 	 * }
-	 */
-	
-
-	
-
-	// @When("^Passes exam within duration")
-
-	/*
-	 * @When("^(.*) got (\\d+) marks in exam") public void gotMarks(String username,
-	 * float marks) throws Throwable { user.setUsername(username);
-	 * user.setMarks(marks);
-	 * 
-	 * }
-	 */
-
-	/*
-	 * @Then("^(.*) becomes as (.*)certified$") public void cerrtifiedYes(String
-	 * username, String certification) throws Throwable { assertThat(username,
-	 * is(user.getUsername())); assertThat(user.getCertifcation(), equalTo("Java"));
-	 * assertThat(user.getResults(), is(true)); }
 	 */
 
 }

@@ -5,6 +5,7 @@ public class User {
 	private String username;
 	private String password;
 	private int marks;
+	private int duration;
 	private String certifcation;
 	
 
@@ -38,6 +39,14 @@ public class User {
 
 	public void setMarks(int marks) {
 		this.marks = marks;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 
 	
